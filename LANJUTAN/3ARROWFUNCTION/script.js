@@ -7,6 +7,9 @@
 
 // console.log(Mahasiswa('Edit Wiranto'));
 
+
+
+
 // function expression
 
 
@@ -18,11 +21,11 @@
 
 
 // let Mahasiswa = nama => `Halo ${nama}`;
-
 // console.log(Mahasiswa('Edit Wiranto'));
 
-// let Mahasiswa = (nama, umur) => `Halo ${nama}, Saya Umur ${umur}`;
 
+
+// let Mahasiswa = (nama, umur) => `Halo ${nama}, Saya Umur ${umur}`;
 // console.log(Mahasiswa('Edit Wiranto', 24));
 
 
