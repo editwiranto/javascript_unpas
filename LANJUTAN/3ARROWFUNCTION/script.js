@@ -43,7 +43,7 @@
 //     jumlahHuruf: nama.length
 // }));
 
-// console.table(keterangan)
+// console.table(keterangan) 
 
 // function expression
 
