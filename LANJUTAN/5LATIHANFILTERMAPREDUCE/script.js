@@ -17,10 +17,11 @@ let jsLanjut = li.filter(video => video.textContent.includes('JAVASCRIPT LANJUTA
     .reduce((total,detik) => total + detik)
 
 //ubah formatnya jadi jam menit deitk
-const jam = Math.floor(jsLanjut / 3600);
-jsLanjut = jsLanjut - jam * 3600;
-const menit = Math.floor(jsLanjut / 60);
-const detik = jsLanjut - menit * 60;
+//jlLanjut 8292
+const jam = Math.floor(jsLanjut / 3600); //8292 / 3600 = 2
+jsLanjut = jsLanjut - jam * 3600; //8292 - 2 * 3600 = 1092
+const menit = Math.floor(jsLanjut / 60); //1092 / 60 = 18
+const detik = jsLanjut - menit * 60; // 1092 - 18 * 60 = 12
 
 //simpan di dom
 const pDurasi = document.querySelector('.duration');
