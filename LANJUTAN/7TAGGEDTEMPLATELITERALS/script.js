@@ -46,3 +46,4 @@ const str = highlight`Nama Saya : ${nama}, Umur Saya : ${umur}, Email : ${email}
 
 
 document.body.innerHTML = str;
+console.log(str); 
