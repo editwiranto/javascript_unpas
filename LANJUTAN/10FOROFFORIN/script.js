@@ -1,4 +1,4 @@
-const mhs = ['Edit Wiranto', 'Rizki', 'Steven'];
+// const mhs = ['Edit Wiranto', 'Rizki', 'Steven'];
 
 // for (let i = 0; i < mhs.length; i++) {
 //     console.log(mhs[i]);
@@ -6,7 +6,7 @@ const mhs = ['Edit Wiranto', 'Rizki', 'Steven'];
 
 // mhs.forEach(m => console.log(m));
 
-const edit = 'Edit wiranto';
+// const edit = 'Edit wiranto';
 
 // for (const m of mhs) {
 //     console.log(m);
@@ -27,7 +27,7 @@ const edit = 'Edit wiranto';
 
 //nodelist
 
-const li = document.querySelectorAll('.nama');
+// const li = document.querySelectorAll('.nama');
 
 // li.forEach(m => console.log(m.textContent));
 
@@ -37,16 +37,25 @@ const li = document.querySelectorAll('.nama');
 
 // arguments
 
-function jumlahAngka() {
+// function jumlahAngka() {
 
-    jumlah = 0;
-    // arguments.forEach(m => jumlah += m);
-    for (const i of arguments) {
-        jumlah += i;
-    }
-    return jumlah;
+//     jumlah = 0;
+//     // arguments.forEach(m => jumlah += m);
+//     for (const i of arguments) {
+//         jumlah += i;
+//     }
+//     return jumlah;
+// }
+
+// console.log(jumlahAngka(1, 2, 3, 4, 5));
+
+const mhs = {
+    nama: 'Edit Wiranto',
+    kelas: 'TIH-19',
+    programStudi:  'Teknik Informatika'
 }
 
-console.log(jumlahAngka(1, 2, 3, 4, 5));
-
+for (let i in mhs) {
+    console.log(mhs[i]);
+}
 
