@@ -13,11 +13,73 @@
   </head>
 
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <h1>EDIT MOVIE</h1>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-8">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control input-keyword"
+              placeholder="Search Movie"
+            />
+            <button
+              class="btn btn-primary search-button"
+              type="submit"
+              id="button-addon2"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
 
+      <div class="row movie_container">
+        <div class="kosong"></div>
+      </div>
+      
 
-
+      <!-- awal modal -->
+      <div
+        class="modal fade"
+        id="movieDetailModal"
+        tabindex="-1"
+        aria-labelledby="movieDetailModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="movieDetailModal">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- akhir modal -->
 
     <!-- jquery minified ada ajax nya -->
     <script
@@ -30,5 +92,6 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
