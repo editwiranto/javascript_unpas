@@ -82,30 +82,49 @@
 
 const btnCari = document.querySelector('.search-button');
 btnCari.addEventListener('click', async function () {
-    const inputKeyword = document.querySelector('.input-keyword');
-    const movies = await getMovies(inputKeyword.value);
-    updateUI(movies);
+    try {
+        const inputKeyword = document.querySelector('.input-keyword');
+        const movies = await getMovies(inputKeyword.value);
+        updateUI(movies);
+    } catch(err) {
+        console.log(err);
+    }
 });
 
 document.addEventListener('click', async function (e) {
-    if (e.target.classList.contains('modal-detail-button')) {
-        const imdbid = e.target.dataset.imdbid;
-        const movieDetail = await getMovieDetail(imdbid);
-        updateUIDetail(movieDetail);
-    }
+    try {
+        if (e.target.classList.contains('modal-detail-button')) {
+            const imdbid = e.target.dataset.imdbid;
+            const movieDetail = await getMovieDetail(imdbid);
+            updateUIDetail(movieDetail);
+        }
+    } catch (err) {
+        console.log(err);
+   }
 });
 
 
 
 function getMovies(keyword) {
     return fetch('http://www.omdbapi.com/?apikey=dca61bcc&s=' + keyword)
-        .then(response => response.json())
-        .then(response => response.Search);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(response => {
+            if (response.Response === 'False') {
+                throw new Error(response.Error);     
+            }
+            return response.Search;
+        });
 }
 
 
 function updateUI(movies) {
     let cards = '';
+    console.log(movies);
     movies.forEach(m => cards += showMovie(m));
     const movieContainer = document.querySelector('.movie_container');
     movieContainer.innerHTML = cards;
@@ -113,8 +132,19 @@ function updateUI(movies) {
 
 function getMovieDetail(imdbid) {
     return fetch('http://www.omdbapi.com/?apikey=dca61bcc&i=' + imdbid)
-        .then(response => response.json())
-        .then(m => m);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(m => {
+            if (m.Response == 'False') {
+                throw new Error(m.Error);
+            }
+
+            return m;
+        })
 }
 
 function updateUIDetail(m){
